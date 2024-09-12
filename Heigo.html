@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Template</title>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  </head>
+  <body style="text-decoration: none !important; width: 100%">
+    <!-- Template Placeholder -->
+    <script id="template" type="text/x-handlebars-template">
+      <table
+        cellpadding='0'
+        cellspacing='0'
+        border='0'
+        style='font-size: large; font-family: Arial'
+      >
+        <tbody>
+          <tr>
+            <td>
+              <table
+                cellpadding='0'
+                cellspacing='0'
+                border='0'
+                style='font-size: large; font-family: Arial'
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style='text-align: right; vertical-align: center; padding-right: 30px; max-width: 205px;'
+                    >
+                      <table
+                        cellpadding='0'
+                        cellspacing='0'
+                        border='0'
+                        style='font-size: large; font-family: Arial'
+                      >
+                        <tbody>
+                          <tr>
+                            <td>
+                              <img
+                                src='{{image}}'
+                                width='150'
+                                style='display: block; width: 100%; border-radius: 4px;'
+                              />
+                            </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </td>
+                    <td style='vertical-align: center'>
+                      <div style='min-width: {{width}};'>
+                        <h2
+                          style='margin: 0px; font-size: 26px; color: rgb(0, 0, 0); font-weight: 400; text-wrap: nowrap; white-space: nowrap; margin-bottom: 7px;'
+                        >
+                          {{name}}
+                        </h2>
+                      </div>
+                      <p
+                        style='margin: 0px; color: rgba(34, 34, 45, 0.8); font-size: 18px; line-height: 24px; margin-bottom: 20px; text-wrap: nowrap; white-space: nowrap; font-style: italic;'
+                      >
+                        {{position}}
+                      </p>
+                      <table
+                        cellpadding='0'
+                        cellspacing='0'
+                        border='0'
+                        style='font-size: large; font-family: Arial'
+                      >
+                        <tbody>
+                          <tr height='25' style='vertical-align: middle'>
+                            <td
+                              style='padding: 0px; border-radius: 4px; padding: 4px 0px; display: flex; align-items: center; margin-bottom: 8px;'
+                            >
+                              <img
+                                src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/website%20(1).png'
+                                alt='website'
+                                width='18'
+                                height='18'
+                                style='vertical-align: middle; margin-right: 5px'
+                              />
+                              <a
+                                href='https://yachtway.com'
+                                style='text-decoration: none !important; color: rgba(0, 0, 0, 0.01); font-size: 16px; font-weight: 400; line-height: 20px;'
+                              >
+                                <span
+                                  style='text-decoration: none !important; color: black;'
+                                >{{website}}</span>
+                              </a>
+                            </td>
+                          </tr>
+
+                          <tr
+                            height='25'
+                            style='vertical-align: middle; margin-bottom: 10px'
+                          >
+                            <td
+                              style='padding: 0px; border-radius: 4px; padding: 4px 0px; display: flex; align-items: center; margin-bottom: 8px;'
+                            >
+                              <img
+                                src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/email%20(1).png'
+                                alt='email'
+                                width='18'
+                                height='18'
+                                style='vertical-align: middle; margin-right: 5px'
+                              />
+                              <a
+                                href='mailto:{{email}}'
+                                style='text-decoration: none; text-decoration: none !important; color: rgba(0, 0, 0, 0.01); font-size: 16px; font-weight: 400; line-height: 20px;'
+                              >
+                                <span
+                                  style='text-decoration: none !important; color: black;'
+                                >{{email}}</span>
+                              </a>
+                            </td>
+                          </tr>
+
+                          <tr
+                            height='25'
+                            style='vertical-align: start; margin-bottom: 10px'
+                          >
+                            <td
+                              style='padding: 0px; border-radius: 4px; padding: 4px 0px; display: flex; align-items: center; margin-bottom: 8px;'
+                            >
+                              <img
+                                src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/phone%20(1).png'
+                                alt='phone'
+                                width='18'
+                                height='18'
+                                style='vertical-align: middle; margin-right: 5px'
+                              />
+                              <a
+                                href='tel:{{phoneOpen}}'
+                                style='text-decoration: none; color: rgba(0, 0, 0, 0.01); font-size: 16px; font-weight: 400; line-height: 20px;'
+                              >
+                                <span
+                                  style='text-decoration: none !important; color: black;'
+                                >{{phone}}</span>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table
+                        role='presentation'
+                        align='left'
+                        style='border-spacing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:auto; text-align:left'
+                        class='hs_cos_wrapper_type_social_module'
+                        width='auto'
+                      >
+                        <tbody>
+                          <tr align='left'>
+                            <td
+                              class='social-network-cell'
+                              style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word'
+                            >
+                              <table
+                                role='presentation'
+                                align='left'
+                                style='border-spacing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:auto; text-align:left'
+                                class='hs_cos_wrapper_type_social_module_single'
+                                width='auto'
+                              >
+                                <tbody>
+                                  <tr align='left'>
+                                    <td
+                                      class='display_block_on_small_screens'
+                                      style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 4px 8px 0; line-height:1; vertical-align:middle'
+                                      valign='middle'
+                                    >
+                                      <a
+                                        href='https://www.instagram.com/yachtway'
+                                        style='color:#00a4bd; mso-line-height-rule:exactly; text-decoration:none !important'
+                                        data-hs-link-id='0'
+                                        target='_blank'
+                                      >
+                                        <img
+                                          src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/Social%20Icon%20(3).png'
+                                          alt='Instagram'
+                                          height='24'
+                                          style='outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:none; width:auto!important; height:24px!important; vertical-align:middle'
+                                          valign='middle'
+                                          width='auto'
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td><td
+                              class='social-network-cell'
+                              style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word'
+                            >
+                              <table
+                                role='presentation'
+                                align='left'
+                                style='border-spacing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:auto; text-align:left'
+                                class='hs_cos_wrapper_type_social_module_single'
+                                width='auto'
+                              >
+                                <tbody>
+                                  <tr align='left'>
+                                    <td
+                                      class='display_block_on_small_screens'
+                                      style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 4px; line-height:1; vertical-align:middle'
+                                      valign='middle'
+                                    >
+                                      <a
+                                        href='https://www.youtube.com/@yachtway'
+                                        style='color:#00a4bd; mso-line-height-rule:exactly; text-decoration:none !important'
+                                        data-hs-link-id='0'
+                                        target='_blank'
+                                      >
+                                        <img
+                                          src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/brand-youtube%20(1).png'
+                                          alt='YouTube'
+                                          height='24'
+                                          style='outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:none; width:auto!important; height:24px!important; vertical-align:middle'
+                                          valign='middle'
+                                          width='auto'
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td><td
+                              class='social-network-cell'
+                              style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word'
+                            >
+                              <table
+                                role='presentation'
+                                align='left'
+                                style='border-spacing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:auto; text-align:left'
+                                class='hs_cos_wrapper_type_social_module_single'
+                                width='auto'
+                              >
+                                <tbody>
+                                  <tr align='left'>
+                                    <td
+                                      class='display_block_on_small_screens'
+                                      style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 4px; line-height:1; vertical-align:middle'
+                                      valign='middle'
+                                    >
+                                      <a
+                                        href='https://www.linkedin.com/company/yachtway'
+                                        style='color:#00a4bd; mso-line-height-rule:exactly; text-decoration:none !important'
+                                        data-hs-link-id='2'
+                                        target='_blank'
+                                      >
+                                        <img
+                                          src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/mdi_linkedin%20(1).png'
+                                          alt='LinkedIn'
+                                          height='24'
+                                          style='outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:none; width:auto!important; height:24px!important; vertical-align:middle'
+                                          valign='middle'
+                                          width='auto'
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td><td
+                              class='social-network-cell'
+                              style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word'
+                            >
+                              <table
+                                role='presentation'
+                                align='left'
+                                style='border-spacing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:auto; text-align:left'
+                                class='hs_cos_wrapper_type_social_module_single'
+                                width='auto'
+                              >
+                                <tbody>
+                                  <tr align='left'>
+                                    <td
+                                      class='display_block_on_small_screens'
+                                      style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 4px; line-height:1; vertical-align:middle'
+                                      valign='middle'
+                                    >
+                                      <a
+                                        href='https://www.facebook.com/102194509425863'
+                                        style='color:#00a4bd; mso-line-height-rule:exactly; text-decoration:none !important'
+                                        data-hs-link-id='0'
+                                        target='_blank'
+                                      >
+                                        <img
+                                          src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/Social%20Icon%20(5).png'
+                                          alt='Facebook'
+                                          height='24'
+                                          style='outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:none; width:auto!important; height:24px!important; vertical-align:middle'
+                                          valign='middle'
+                                          width='auto'
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td><td
+                              class='social-network-cell'
+                              style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word'
+                            >
+                              <table
+                                role='presentation'
+                                align='left'
+                                style='border-spacing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:auto; text-align:left'
+                                class='hs_cos_wrapper_type_social_module_single'
+                                width='auto'
+                              >
+                                <tbody>
+                                  <tr align='left'>
+                                    <td
+                                      class='display_block_on_small_screens'
+                                      style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 4px; line-height:1; vertical-align:middle'
+                                      valign='middle'
+                                    >
+                                      <a
+                                        href='https://x.com/yacht_way'
+                                        style='color:#00a4bd; mso-line-height-rule:exactly; text-decoration:none !important'
+                                        data-hs-link-id='3'
+                                        target='_blank'
+                                      >
+                                        <img
+                                          src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/Social%20Icon%20(4).png'
+                                          alt='X'
+                                          height='24'
+                                          style='outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:none; width:auto!important; height:24px!important; vertical-align:middle'
+                                          valign='middle'
+                                          width='auto'
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td><td
+                              class='social-network-cell'
+                              style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word'
+                            >
+                              <table
+                                role='presentation'
+                                align='left'
+                                style='border-spacing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:auto; text-align:left'
+                                class='hs_cos_wrapper_type_social_module_single'
+                                width='auto'
+                              >
+                                <tbody>
+                                  <tr align='left'>
+                                    <td
+                                      class='display_block_on_small_screens'
+                                      style='border-collapse:collapse; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px 4px; line-height:1; vertical-align:middle'
+                                      valign='middle'
+                                    >
+                                      <a
+                                        href='https://www.tiktok.com/@yachtway'
+                                        style='color:#00a4bd; mso-line-height-rule:exactly; text-decoration:none !important'
+                                        data-hs-link-id='0'
+                                        target='_blank'
+                                      >
+                                        <img
+                                          src='https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/cib_tiktok%20(1).png'
+                                          alt='TikTok'
+                                          height='24'
+                                          style='outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:none; width:auto!important; height:24px!important; vertical-align:middle'
+                                          valign='middle'
+                                          width='auto'
+                                        />
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </script>
+
+    <!-- Placeholder for the Generated Content -->
+    <div id="content"></div>
+
+    <script>
+      // Array of objects
+      const data = [
+        {
+          name: 'Heigo Paartalu',
+          position: 'Chief Executive Officer',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hub/43972433/hubfs/Frame%201171277111-1.jpg?width=376&upscale=true&name=Frame%201171277111-1.jpg',
+          website: 'YachtWay.com',
+          email: 'Heigo@YachtWay.com',
+          phone: '+1 (305) 709 5050',
+          phoneOpen: '+13057095050',
+        },
+        {
+          name: 'Anna Hladka',
+          position: 'Head of Design',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/anna-min.png',
+          website: 'YachtWay.com',
+          email: 'Anna@YachtWay.com',
+          phone: '+38 (068) 699 8120',
+          phoneOpen: '+380686998120',
+        },
+        {
+          name: 'Heidi Lichtfuss',
+          position: 'UX Writer',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/Heidi-min.png',
+          website: 'YachtWay.com',
+          email: 'Heidi@YachtWay.com',
+          phone: '+1 (800) 567 9929',
+          phoneOpen: '+18005679929',
+        },
+        {
+          name: 'Karen Kroll',
+          position: 'Account Manager',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/karen-min.png',
+          website: 'YachtWay.com',
+          email: 'Karen@YachtWay.com',
+          phone: '+1 (623) 309 7663',
+          phoneOpen: '+16233097663',
+        },
+        {
+          name: 'Mavil Gonzalez',
+          position: 'Director of Sales',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/Frame%201171277111%20(2).jpg',
+          website: 'YachtWay.com',
+          email: 'Mavil@YachtWay.com',
+          phone: '+1 (863) 781 3702',
+          phoneOpen: '+18637813702',
+        },
+        {
+          name: 'Nathan Rose',
+          position: 'Director of Customer Relations',
+          width: '250px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/nathan.png',
+          website: 'YachtWay.com',
+          email: 'Nathan@YachtWay.com',
+          phone: '+1 (929) 562 5463',
+          phoneOpen: '+19295625463',
+        },
+        {
+          name: 'Roman Maistrenko',
+          position: 'Head of Development',
+          width: '250px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/roman.png',
+          website: 'YachtWay.com',
+          email: 'Roman@YachtWay.com',
+          phone: '+38 (050) 711 1240',
+          phoneOpen: '+380507111240',
+        },
+        {
+          name: 'Tyler O`Brien',
+          position: '3D Tour Product',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/tyler-min.png',
+          website: 'YachtWay.com',
+          email: 'Tyler@YachtWay.com',
+          phone: '+1 (970) 290 5201',
+          phoneOpen: '+19702905201',
+        },
+        {
+          name: 'Vladyslava Fedorova',
+          position: 'Chief Operating Officer',
+          width: '250px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/Vlada-min.png',
+          website: 'YachtWay.com',
+          email: 'Vladyslava@YachtWay.com',
+          phone: '+38 (095) 585 5670',
+          phoneOpen: '+380955855670',
+        },
+        {
+          name: 'Yanni Velez',
+          position: 'Content Creator',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/Yanni-min.png',
+          website: 'YachtWay.com',
+          email: 'Yanni@YachtWay.com',
+          phone: '+1 (305) 333 5266',
+          phoneOpen: '+13053335266',
+        },
+        {
+          name: 'Kseniia Pavliuk',
+          position: 'Content Creator',
+          width: '235px',
+          image:
+            'https://43972433.fs1.hubspotusercontent-na1.net/hubfs/43972433/ksenia.png',
+          website: 'YachtWay.com',
+          email: 'Kseniia@yachtway.com',
+          phone: '+38 (096) 575 8694',
+          phoneOpen: '+380965758694',
+        },
+      ];
+
+      // Get the template
+      const templateSource = document.getElementById('template').innerHTML;
+
+      // Compile the template
+      const template = Handlebars.compile(templateSource);
+
+      // Generate the HTML and append it to the content div
+      const contentDiv = document.getElementById('content');
+      data.forEach((item) => {
+        const html = template(item);
+        contentDiv.innerHTML += html;
+      });
+    </script>
+  </body>
+</html>
