@@ -391,6 +391,43 @@
     <!-- Placeholder for the Generated Content -->
     <div id="content"></div>
 
+    <style>
+      .copy-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        margin: 10px 0;
+        transition: background-color 0.2s;
+      }
+      
+      .copy-button:hover {
+        background-color: #0056b3;
+      }
+      
+      .copy-button:active {
+        background-color: #004085;
+      }
+      
+      .copy-button.copied {
+        background-color: #28a745;
+      }
+      
+      .signature-container {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+      }
+      
+      .signature-preview {
+        margin-bottom: 10px;
+      }
+    </style>
+
     <script>
       // Array of objects
       const data = [
@@ -580,10 +617,108 @@
 
       // Generate the HTML and append it to the content div
       const contentDiv = document.getElementById('content');
-      data.forEach((item) => {
+      data.forEach((item, index) => {
         const html = template(item);
-        contentDiv.innerHTML += html;
+        
+        // Create a container for each signature with copy button
+        const signatureContainer = document.createElement('div');
+        signatureContainer.className = 'signature-container';
+        
+        // Add signature preview
+        const preview = document.createElement('div');
+        preview.className = 'signature-preview';
+        preview.innerHTML = html;
+        
+        // Add copy button
+        const copyButton = document.createElement('button');
+        copyButton.className = 'copy-button';
+        copyButton.textContent = `Copy ${item.name}'s Signature`;
+        copyButton.onclick = () => copySignature(html, copyButton);
+        
+        // Assemble the container
+        signatureContainer.appendChild(copyButton);
+        signatureContainer.appendChild(preview);
+        
+        contentDiv.appendChild(signatureContainer);
       });
+      
+      // Copy function
+      function copySignature(htmlContent, button) {
+        // Clean up the HTML for better Gmail compatibility
+        const cleanHtml = htmlContent.replace(/\s+/g, ' ').trim();
+        
+        // Create a plain text version by stripping HTML tags
+        const plainText = cleanHtml.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+        
+        // Try to copy as HTML first (modern browsers)
+        if (navigator.clipboard && navigator.clipboard.write) {
+          const clipboardItem = new ClipboardItem({
+            'text/html': new Blob([cleanHtml], { type: 'text/html' }),
+            'text/plain': new Blob([plainText], { type: 'text/plain' })
+          });
+          
+          navigator.clipboard.write([clipboardItem]).then(() => {
+            // Visual feedback
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.classList.remove('copied');
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy HTML: ', err);
+            // Fallback to plain text
+            copyAsPlainText(cleanHtml, button);
+          });
+        } else {
+          // Fallback for older browsers
+          copyAsPlainText(cleanHtml, button);
+        }
+      }
+      
+      // Fallback function for plain text copying
+      function copyAsPlainText(htmlContent, button) {
+        const plainText = htmlContent.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+        
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(plainText).then(() => {
+            showCopyFeedback(button, 'Copied as text!');
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+            // Final fallback for very old browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = plainText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showCopyFeedback(button, 'Copied as text!');
+          });
+        } else {
+          // Final fallback for very old browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = plainText;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          showCopyFeedback(button, 'Copied as text!');
+        }
+      }
+      
+      // Helper function for copy feedback
+      function showCopyFeedback(button, message) {
+        const originalText = button.textContent;
+        button.textContent = message;
+        button.classList.add('copied');
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('copied');
+        }, 2000);
+      }
     </script>
   </body>
 </html>
