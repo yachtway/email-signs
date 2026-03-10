@@ -1,17 +1,18 @@
 (function () {
+  const ICON_BASE = "https://assets.yachtway.com/email-icons";
   const ASSETS = {
-    iconWebsite: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdlA0jNSWnio9Pac5VQmLEM2ZwHYK3D8AeGIJzC",
-    iconEmail: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdlyHE0j4j73g4j5XVdoUn9fDYKFmIr1hSl6MR2",
-    iconPhone: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdlAyLJzQnio9Pac5VQmLEM2ZwHYK3D8AeGIJzC",
-    iconInstagram: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdl8uMJTpcMJxymVpeB9nrPWYR1w7L4TzgUcXGH",
-    iconYoutube: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdl0H1nc6bMCOF4kndVsmpNYjaRTt1iJf30wQeg",
-    iconLinkedin: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdlOrdZvmEiZVfUeSz7DTbCtI1WvXuwdcGpljJs",
-    iconFacebook: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdl5JWTtLs1DzBx4nlWqMUTSfIEhQKikLvJ2FbC",
-    iconMasterCover: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdl24hRlKX5P0gm4pKIjliekfurRDwXOYEFSWd7",
-    iconFinancing: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdlbYKHvh0iHTU7BRpx6i0uVL3hFJOIvqd2ArkQ",
-    iconEasySign: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdlLV8uX6I3zBRN0M4VQ2GH78swZglXWTAkdnyS",
-    iconStudio: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdllPl35Pow8HFC1ZuvKk0aAzpQocXhB5nDOsiW",
-    iconCalendar: "https://dlpvsemkze.ufs.sh/f/SIyKuT8kZAdlXN6W6S0rFg1jkdsTDzbONl3KvQwIuaRH506G",
+    iconWebsite: `${ICON_BASE}/web_outline.svg`,
+    iconEmail: `${ICON_BASE}/mail_outline.svg`,
+    iconPhone: `${ICON_BASE}/phone_outline.svg`,
+    iconInstagram: `${ICON_BASE}/instagram_logo_solid.svg`,
+    iconYoutube: `${ICON_BASE}/youtube_logo_solid.svg`,
+    iconLinkedin: `${ICON_BASE}/linkedin_logo_solid.svg`,
+    iconFacebook: `${ICON_BASE}/facebook_solid.svg`,
+    iconMasterCover: `${ICON_BASE}/shield_outline.svg`,
+    iconFinancing: `${ICON_BASE}/get_pre_qualified_outline.svg`,
+    iconEasySign: `${ICON_BASE}/easysign_outline.svg`,
+    iconStudio: `${ICON_BASE}/photo_camera_outline.svg`,
+    iconCalendar: `${ICON_BASE}/calendar_outline.svg`,
   };
   const ICON_SIZE = 18;
   const PREVIEW_FONT_URL =
